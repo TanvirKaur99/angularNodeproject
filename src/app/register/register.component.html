@@ -1,0 +1,109 @@
+<div style="background-color: #666666;">
+
+  <div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" #registerform="ngForm" (ngSubmit)="addData(registerform)">
+					<span class="login100-form-title p-b-43">
+					Register
+					</span>
+
+          <div class="wrap-input100 validate-input" data-validate = "Valid name is required: abc">
+						<input class="input100"
+            type="text"
+            name="name"
+            #name="ngModel"
+            [(ngModel)]="userservice.newUser.name"
+            >
+						<span class="focus-input100"></span>
+						<span class="label-input100">Name</span>
+					</div>
+
+          <mat-error *ngIf="registerform.submitted && name.invalid">
+            <mat-error *ngIf="name.errors?.required">
+              Enter our Name
+            </mat-error>
+          </mat-error>
+
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100"
+            type="text"
+            name="email"
+            #email="ngModel"
+            [(ngModel)]="userservice.newUser.email">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Email</span>
+					</div>
+
+          <mat-error *ngIf="registerform.submitted && email.invalid">
+            <mat-error *ngIf="email.errors?.required">
+             Please enter your email
+            </mat-error>
+          </mat-error>
+
+
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid contact is required: ex@abc.xyz">
+						<input class="input100"
+             type="text"
+             name="contact"
+             #contact="ngModel"
+             [(ngModel)]="userservice.newUser.contact">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Contact</span>
+					</div>
+
+          <mat-error *ngIf="registerform.submitted && contact.invalid">
+            <mat-error *ngIf="contact.errors?.required">
+             Please enter your contact
+            </mat-error>
+          </mat-error>
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100"
+            type="password"
+            name="password"
+            #password="ngModel"
+            [(ngModel)]="userservice.newUser.password" >
+						<span class="focus-input100"></span>
+						<span class="label-input100">Password</span>
+					</div>
+          <mat-error *ngIf="registerform.submitted && password.invalid">
+            <mat-error *ngIf="password.errors?.required">
+             Please enter your password
+            </mat-error>
+          </mat-error>
+
+
+
+
+					<div class="container-login100-form-btn">
+						<button type="submit" class="login100-form-btn">
+							Register
+						</button>
+					</div>
+
+					<div class="text-center p-t-46 p-b-20">
+						<span class="txt2">
+							or <a href="/login">sign In</a> using
+						</span>
+					</div>
+
+					<div class="login100-form-social flex-c-m">
+						<a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
+							<i class="fa fa-facebook-f" aria-hidden="true"></i>
+						</a>
+
+						<a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
+
+				<div class="login100-more" style="background-image: url('assets/images/bg-01.jpg');">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
